@@ -11,8 +11,16 @@ class UserController extends Controller
         return view('base',["name"=>$name]);
     }
 
-    function handleAdmin()
+    function getLogin()
     {
         return view("admin.login");
+    }
+    function login(Request $request)
+    {
+        $email=$request->email;
+        return response()->json([
+        "status" => "success",
+        "email" => $email
+    ]);
     }
 }

@@ -25,4 +25,10 @@ Route::redirect("/root","/home");
 
 Route::get("/base/{name?}",[UserController::class,'getUser']);
 
-Route::get("admin/login",[UserController::class,'handleAdmin']);
+Route::get("admin/login",[UserController::class,'getLogin']);
+
+Route::post("/login",[UserController::class,'login']);
+
+Route::get('/admin/dashboard/{email}', function($email){
+    return view('admin.dashboard', ['name' => $email]);
+});
