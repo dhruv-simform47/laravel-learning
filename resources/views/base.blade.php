@@ -6,12 +6,14 @@
     <title>Base</title>
 </head>
 <body>
-    <h1> hello 
-    @if(isset($name))
-        {{ $name }}
-    @else
-        Guest
-    @endif,
-     this is base file </h1>
+    <h1> hello  this is base file </h1>
+    
+        {{ $email }}
+        current url: {{ URL::current() }}
+     <br>
+     <br>
+    previous url: {{ url()->previous() }}
+
+
 </body>
 </html>

@@ -15,20 +15,25 @@ Route::view("welcome","welcome");
 Route::redirect("/root","/home");
 
 
-// Route::get('/base/{name?}',function($name = null){
-//     return view('base',['name'=>$name]);
-
-// });
+// Route::get('/base/{name?}',function($name = "guest"){
+//     return view('base',['name'=>$name]);  });
 
 
 // ===== moving view logic to controller =====
 
-Route::get("/base/{name?}",[UserController::class,'getUser']);
+Route::get("/base/{email?}",[UserController::class,'getUser']);
 
-Route::get("admin/login",[UserController::class,'getLogin']);
-
+Route::get("/admin/login",[UserController::class,'getLogin']);
 Route::post("/login",[UserController::class,'login']);
 
+Route::get("admin/add-user",[UserController::class,'addUser']);
+Route::post("admin/add-user",[UserController::class,'addUser']);
+
+
+
+
 Route::get('/admin/dashboard/{email}', function($email){
-    return view('admin.dashboard', ['name' => $email]);
+    return view('admin.dashboard', ['email' => $email]);
 });
+
+Route::match(['get','post'],'/add-details',[UserController::class,'addDetail']);

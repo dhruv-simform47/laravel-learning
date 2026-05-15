@@ -8,14 +8,14 @@ use Illuminate\View\Component;
 
 class Header extends Component
 {
-    public $userName;
+    public $email;
     /**
      * Create a new component instance.
      */
-    public function __construct($name = null)
+    public function __construct($email = null)
     {
         //
-        $this->userName=$name;
+        $this->email=$email;
     }
 
     /**

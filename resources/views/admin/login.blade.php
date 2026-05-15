@@ -46,7 +46,7 @@ $.ajax({
         alert("Error occur"+ error);
     }
 })
-})
+});
 
 </script>
 

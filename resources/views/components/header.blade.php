@@ -1,15 +1,17 @@
 <div>
     <!-- Simplicity is an acquired taste. - Katharine Gerould -->
     
-    @if(isset($userName))
+    @if(isset($email))
     <nav>
-        <a href="/home">Home</a>
-        <a href="/base/dhruv">Base</a>
-        <a href="/">Index</a>
+        <a href="{{ URL::to('home')}}">Home</a>
+        {{-- <a href="  ">Base</a> --}}
+        <a href=" {{ URL::to('base',[$email]) }}">Base</a>
+        
+        <a href="{{ URL::to('/') }}">Index</a>
     </nav>
   
     <div>
-        Logged In As : {{$userName}}
+        Logged In As : {{$email}}
     </div>
     @else
     <nav>
