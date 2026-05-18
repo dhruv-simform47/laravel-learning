@@ -4,6 +4,9 @@ use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\AgeChecker;
+// susbscription manager
+use App\Http\Middleware\CheckPrimiumStatus;
+use App\Services\SubscriptionManager;
 
 Route::get('/', function () {
     return view('index');
@@ -62,3 +65,12 @@ Route::match(['get','post'],'/add-details',[UserController::class,'addDetail'])-
 Route::get("/users",[UserController::class,'user']);
 
 Route::get("/students",[StudentController::class,'getStudents']);
+
+
+
+
+// ===========(Subsription Manager)  service provider use with middleware =========
+
+    Route::get("/primium-content",function(){
+        return view('subscribers.primium');
+    })->middleware(CheckPrimiumStatus::class);

@@ -10,5 +10,5 @@ class Student extends Model
     // protected $table="students";
 }
 
-// to ispec table or model detail using cmd -->>
-//php artisan model:show Student 
+// to specify table or model detail using cmd -->>
+//php artisan model:show Student                       
