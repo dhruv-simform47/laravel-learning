@@ -28,7 +28,7 @@ name:
 $("#loginForm").on("submit",function(e){
 e.preventDefault();
 $.ajax({
-    url:"/login",
+    url:"/admin/login",
     type:"POST",
     data:$(this).serialize(),
     dataType:"json",
