@@ -12,7 +12,7 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        
+        //uncomment below when use admin/login route  
         // $middleware->alias([
         //     "Agecheck"=>"App\Http\Middleware\AgeChecker::class"
         // ]);

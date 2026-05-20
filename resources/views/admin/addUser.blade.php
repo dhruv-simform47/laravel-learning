@@ -66,23 +66,22 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        $("#addForm").on("submit", function (e) {
+        $("#addForm").on("submit", function(e) {
             e.preventDefault();
             $.ajax({
                 url: "/admin/add-user",
                 type: "POST",
                 data: $(this).serialize(),
                 dataType: "json",
-                success: function (response) {
+                success: function(response) {
                     if (response.status == "success") {
                         window.location.href = "/admin/dashboard/" + response.email;
-                    }
-                    else {
+                    } else {
 
-                            window.location.href = "/admin/add-user";
-                        }
+                        window.location.href = "/admin/add-user";
+                    }
                 },
-                error: function (xhr, status, error) {
+                error: function(xhr, status, error) {
 
                     let errors = xhr.responseJSON.errors;
 

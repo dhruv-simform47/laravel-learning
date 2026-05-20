@@ -46,7 +46,7 @@ Route::get("/add-user",[UserController::class,'addUser']);
 });
 
 
-// number 11
+// number 11  from app.php uncomment middleware registration
 Route::middleware('Agecheck')->group(function(){
 Route::get('/admin/dashboard/{email}', function($email){
     return view('admin.dashboard', ['email' => $email]);
