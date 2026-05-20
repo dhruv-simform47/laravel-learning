@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+    <h3>To do a bulk order of 100 parcel click below button : </h3>
+<form action="/bulkOrder" method="POST">
+    @csrf
+
+    <button type="submit">
+        Bhari Order
+    </button>
+</form>
+</body>
+</html>
