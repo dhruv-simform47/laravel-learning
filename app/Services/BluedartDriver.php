@@ -14,4 +14,10 @@ class BluedartDriver implements ShippingDriver
 
         return $cost;
     }
+    public function pingExternalServer(): bool
+    {
+        // In a real app, this would use Http::get('https://api.fedex.com/status')
+        // We will simulate a healthy connection (true)
+        return true; 
+    }
 }
