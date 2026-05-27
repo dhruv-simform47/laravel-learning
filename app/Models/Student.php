@@ -12,3 +12,4 @@ class Student extends Model
 
 // to specify table or model detail using cmd -->>
 //php artisan model:show Student                       
+

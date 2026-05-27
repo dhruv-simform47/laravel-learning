@@ -52,6 +52,11 @@ class UserController extends Controller
             return view('forms.addDetail');
         }
 
+        if($request->input('age') == 25)
+            {
+                return redirect()->back()->withInput();
+            }
+
         $request->validate([
             'name' => 'required',
             'email' => 'required | email ',
@@ -68,6 +73,12 @@ class UserController extends Controller
                 'lang' => 'language is required',
             ]);
 
+            // $data=[
+            //     "message"=>"well done",
+            //     "name"=>"dhruv",
+            //     "age"=>25
+            // ];
+            // return response()->json($data,201);
         return $request;
     }
 

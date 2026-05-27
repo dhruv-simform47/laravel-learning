@@ -12,4 +12,7 @@ class StudentController extends Controller
     $students=\App\Models\Student::all();
     return view('student',["data"=>$students]);
     }
+    public function demoS(){
+    return redirect('/home');
+    }
 }

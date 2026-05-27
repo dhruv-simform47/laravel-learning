@@ -6,6 +6,9 @@
     <title>Document</title>
 </head>
 <body>
+   @if(isSet($status))
+    <h3> {{ $status}} -- {{$message}}</h3> 
+   @endif
     this is index page
 </body>
 </html>
