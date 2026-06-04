@@ -116,3 +116,9 @@ return view('index',['status'=>404,'message'=>'page not found']);
     //     Route::get('/metrics', [UserController::class, 'metrics'])->name('metrics');
         
     // });
+
+    // ==============  vite practice route =====================
+
+    Route::get('/vite', function () {
+    return view('vite.home');
+});

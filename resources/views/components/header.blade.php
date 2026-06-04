@@ -5,7 +5,7 @@
         <nav>
             <a href="{{ URL::to('home') }}">Home</a>
 
-            {{-- <a href="{{ Uri::to('/home')}}">Home</a> --}}
+            <a href="{{ Uri::to('/home')}}">Home2</a>
 
             {{-- <a href="  ">Base</a> --}}
             <a href=" {{ URL::to('base', [$email]) }}">Base</a>
