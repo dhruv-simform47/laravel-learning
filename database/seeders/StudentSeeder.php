@@ -15,8 +15,8 @@ class StudentSeeder extends Seeder
     {
         //  ============  using json file =================
 
-        // $file=File::get(path:'database/json/student.json');
-        // $students=collect(json_decode($file,true));
+        $file=File::get(path:'database/json/student.json');
+        $students=collect(json_decode($file,true));
 
         // ==========  using infile students array ===========
         // $students = collect([
@@ -45,18 +45,18 @@ class StudentSeeder extends Seeder
 
         // =======  common logic for file and infile student array ============
         
-        // $students->each(function($student){
-        // Student::insert($student);
-        // });
+        $students->each(function($student){
+        Student::insert($student);
+        });
 
         // ============   using fake function =====================
 
-        for ($i = 0; $i < 10; $i++) {
-            Student::create([
-                'full_name' => fake()->name('male'),
-                'email' => fake()->email(),
-            ]);
-        }
+        // for ($i = 0; $i < 10; $i++) {
+        //     Student::create([
+        //         'full_name' => fake()->name('male'),
+        //         'email' => fake()->email(),
+        //     ]);
+        // }
 
     }
 }
